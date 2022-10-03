@@ -1,0 +1,48 @@
+def InicialMaior(StringInicial, StringDesejada, NumeroOperacoes):
+    lst = []
+    contador = -1
+    possibilidade = 0
+    Tamanho = len(StringDesejada)
+    for i in StringInicial:
+        contador = contador + 1
+        if contador < Tamanho:
+            if StringInicial[contador] == StringDesejada[contador] and contador < Tamanho:
+                lst.append(i)
+            else:
+                possibilidade = possibilidade + 1
+        else:
+            possibilidade = possibilidade + 1
+    if NumeroOperacoes == possibilidade:
+        print("sim")
+    else:
+        print("não")
+
+
+def DesejadaMaior(StringInicial, StringDesejada, NumeroOperacoes):
+    lst = []
+    contador = -1
+    possibilidade = 0
+    Tamanho = len(StringInicial)
+    for i in StringDesejada:
+        contador = contador + 1
+        if contador < Tamanho:
+            if StringInicial[contador] == StringDesejada[contador] and contador < Tamanho:
+                lst.append(i)
+            else:
+                possibilidade = possibilidade + 1
+        else:
+            possibilidade = possibilidade + 1
+    if NumeroOperacoes == possibilidade:
+        print("sim")
+    else:
+        print("não")
+
+while(True):
+    StringInicial = input("Digite a string inicial ")
+    StringDesejada = input("Digite a string desejada ")
+    NumeroOperacoes = int(input("Digite o número de operações para validar "))
+
+    if len(StringInicial) >= len(StringDesejada):
+        InicialMaior(StringInicial, StringDesejada, NumeroOperacoes)
+    else:
+        DesejadaMaior(StringInicial, StringDesejada, NumeroOperacoes)
